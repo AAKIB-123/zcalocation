@@ -14,33 +14,20 @@
       color: #222;
     }
 
-    header {
-  background-color: #3c8dbc;
-  color: #fff;
-  padding: 20px 30px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-header img {
-  max-width: 50px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      letter-spacing: 1px;
+    /* Logo-only Navbar */
+    header.logo-navbar {
+      background-color: #3c8dbc;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-      font-weight: 300;
+    header.logo-navbar img {
+      max-height: 80px;
+      height: auto;
+      width: auto;
+      display: block;
     }
 
     .container {
@@ -103,33 +90,9 @@ header img {
       font-weight: 300;
     }
 
-    .logo-navbar {
-  background-color: #3c8dbc;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-navbar img {
-  max-height: 100px;
-  height: auto;
-  width: auto;
-  display: block;
-}
-
-
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      header p {
-        font-size: 1em;
-      }
-
-      header img {
-        max-width: 140px;
+      header.logo-navbar img {
+        max-height: 60px;
       }
     }
 
@@ -137,14 +100,14 @@ header img {
 </head>
 <body>
 
+<!-- Logo-only Navbar -->
 <header class="logo-navbar">
   <img src="ZCA_NEW_LOGO2-removebg-preview.png" alt="Zakaria Car Accessories Logo" />
 </header>
 
-
 <div class="container">
 
-  <div class="box">
+  <div class="box" id="about">
     <h2>📍 Address</h2>
     <p>
       ABC Complex, Opp. Over Bridge, Nandelav Chowkdi,<br />
@@ -152,7 +115,7 @@ header img {
     </p>
   </div>
 
-  <div class="box">
+  <div class="box" id="contact">
     <h2>📞 Contact Us</h2>
     <div class="call-links">
       <a href="tel:+919714799474">+91 97147 99474</a>
@@ -160,7 +123,7 @@ header img {
     </div>
   </div>
 
-  <div class="box">
+  <div class="box" id="social">
     <h2>📱 Social Media</h2>
     <div class="social-icons">
       <p><strong>Facebook:</strong><br />
@@ -186,7 +149,7 @@ header img {
 </div>
 
 <footer>
-  <p>copyrights &copy 2025 Aakib.A.Patel. All rights reserved.</p>
+  <p>copyrights &copy; 2025 Aakib.A.Patel. All rights reserved.</p>
 </footer>
 
 </body>
