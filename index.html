@@ -19,32 +19,36 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #f4f6f8;
+      background: #f4f6f8;
       color: #222;
-      line-height: 1.6;
     }
 
     /* ================= HEADER ================= */
 
     header {
-      background-color: #3c8dbc;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #3c8dbc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .logo img {
-      max-height: 60px;
+      height: 56px;
     }
 
     nav {
       display: flex;
-      gap: 18px;
+      gap: 22px;
     }
 
     nav a {
@@ -55,19 +59,26 @@
     }
 
     nav a:hover {
-      text-decoration: underline;
+      opacity: 0.85;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      color: #fff;
+      cursor: pointer;
     }
 
     /* ================= LAYOUT ================= */
 
     .container {
       max-width: 1200px;
-      margin: 32px auto;
+      margin: 30px auto;
       padding: 0 16px;
     }
 
     section {
-      background-color: #fff;
+      background: #fff;
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 26px;
@@ -77,20 +88,6 @@
     h2 {
       color: #3c8dbc;
       margin-bottom: 14px;
-      font-size: 1.4rem;
-    }
-
-    /* ================= INTRO ================= */
-
-    .intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .intro p {
-      font-size: 1rem;
     }
 
     /* ================= CONTACT ================= */
@@ -114,36 +111,31 @@
     .phone-link {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-weight: 600;
       color: #3c8dbc;
       text-decoration: none;
-      font-size: 0.95rem;
       white-space: nowrap;
     }
 
     .whatsapp-btn {
-      background-color: #25d366;
+      background: #25d366;
       color: #fff;
       padding: 8px 14px;
       border-radius: 20px;
-      font-weight: 600;
       font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 6px;
-      text-decoration: none;
-    }
-
-    .whatsapp-btn:hover {
-      background-color: #1ebe5d;
     }
 
     /* ================= SOCIAL ================= */
 
     .social-links {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 14px;
     }
 
@@ -152,42 +144,49 @@
       align-items: center;
       gap: 10px;
       padding: 12px;
+      background: #f4f6f8;
       border-radius: 10px;
-      background-color: #f4f6f8;
       text-decoration: none;
-      font-weight: 600;
       color: #3c8dbc;
+      font-weight: 600;
     }
-
-    /* ================= MAP ================= */
 
     iframe {
       width: 100%;
       height: 300px;
       border: none;
       border-radius: 10px;
-      margin-top: 12px;
     }
 
-    /* ================= FOOTER ================= */
-
     footer {
-      background-color: #3c8dbc;
+      background: #3c8dbc;
       color: #fff;
       text-align: center;
       padding: 18px;
       font-size: 0.9rem;
     }
 
-    /* ================= RESPONSIVE ================= */
+    /* ================= MOBILE ================= */
 
     @media (max-width: 768px) {
       nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #3c8dbc;
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px;
         display: none;
       }
 
-      .intro {
-        grid-template-columns: 1fr;
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
       }
     }
   </style>
@@ -196,40 +195,36 @@
 <body>
 
 <header>
-  <div class="logo">
-    <img src="ZCA_NEW_LOGO2-removebg-preview.png" alt="Zakaria Car Accessories">
-  </div>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="ZCA_NEW_LOGO2-removebg-preview.png" alt="Zakaria Car Accessories">
+    </div>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#social">Social</a>
-  </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#social">Social</a>
+    </nav>
+  </div>
 </header>
 
 <div class="container">
 
   <section id="home">
     <h2>Drive with Confidence</h2>
-    <div class="intro">
-      <p>
-        Zakaria Car Accessories offers high-quality accessories designed to
-        improve comfort, safety, and style. From interiors to protection
-        products, we help you enjoy every drive.
-      </p>
-      <p>
-        Trusted by local customers in Bharuch, we focus on quality products,
-        fair pricing, and honest service.
-      </p>
-    </div>
+    <p>Quality car accessories for comfort, safety, and style.</p>
   </section>
 
   <section id="about">
     <h2>Address</h2>
     <p>
       ABC Complex, Opp. Over Bridge, Nandelav Chowkdi,<br>
-      Bholav, Bharuch – 392001, Gujarat, India
+      Bholav, Bharuch – 392001, Gujarat
     </p>
   </section>
 
@@ -237,7 +232,6 @@
     <h2>Contact Us</h2>
 
     <div class="contact-list">
-
       <div class="contact-row">
         <a href="tel:+919714799474" class="phone-link">
           <i class="fa-solid fa-phone"></i> +91 97147 99474
@@ -255,7 +249,6 @@
           <i class="fa-brands fa-whatsapp"></i> WhatsApp
         </a>
       </div>
-
     </div>
   </section>
 
@@ -278,6 +271,12 @@
 <footer>
   © 2026 Zakaria Car Accessories. All rights reserved.
 </footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
