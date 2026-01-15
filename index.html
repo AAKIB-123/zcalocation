@@ -16,19 +16,34 @@
 
     /* Logo-only Navbar */
     header.logo-navbar {
-      background-color: #3c8dbc;
-      padding: 20px 40px;
+      background-color: #3c8dbc;  /* Clean background color */
+      padding: 20px 50px;          /* Adjust padding for better spacing */
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    header.logo-navbar:hover {
+      background-color: #1d5f82; /* Darker shade when hovered */
     }
 
     header.logo-navbar img {
-      max-height: 120px;
-      max-width: 100%;
+      max-height: 120px;           /* Limit logo height */
+      object-fit: contain;         /* Ensure logo doesn't stretch */
+      margin: 0 auto;              /* Center the logo */
       display: block;
-      object-fit: contain;
+    }
+
+    @media (max-width: 600px) {
+      header.logo-navbar {
+        padding: 15px 20px;  /* Adjust padding for mobile */
+      }
+
+      header.logo-navbar img {
+        max-height: 80px;     /* Resize logo on smaller screens */
+      }
     }
 
     .container {
@@ -70,16 +85,6 @@
       margin-top: 10px;
     }
 
-    .social-icons p {
-      margin-bottom: 15px;
-    }
-
-    .call-links a {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
     footer {
       background-color: #3c8dbc;
       color: black;
@@ -93,17 +98,33 @@
       font-weight: 300;
     }
 
-    /* WhatsApp Button */
+    /* Contact Info - Align phone numbers and WhatsApp buttons side-by-side */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Space between the contact blocks */
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Space between phone number and WhatsApp button */
+    }
+
+    .contact-item a {
+      font-weight: bold;
+      color: white;
+    }
+
     .whatsapp-btn {
       display: inline-block;
       background-color: #25D366;
-      color: white;
+      color: BLACK;
       padding: 12px 20px;
       border-radius: 25px;
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s ease;
-      margin-top: 10px;
     }
 
     .whatsapp-btn:hover {
@@ -111,11 +132,18 @@
     }
 
     @media (max-width: 600px) {
-      header.logo-navbar img {
-        max-height: 80px;
+      .contact-info {
+        flex-direction: column; /* Stack elements on mobile */
       }
-      .container {
-        padding: 15px;
+
+      .contact-item {
+        flex-direction: column; /* Stack phone number and WhatsApp button on mobile */
+        gap: 10px;
+      }
+
+      .whatsapp-btn {
+        width: 100%; /* Make the button full width on mobile */
+        text-align: center;
       }
     }
 
@@ -153,44 +181,21 @@
   <!-- Contact Section -->
   <div class="box" id="contact">
     <h2>📞 Contact Us</h2>
-    <div class="call-links">
-      <a href="tel:+919714799474">+91 97147 99474</a>
-      <a href="tel:+919913982544">+91 99139 82544</a>
+    <div class="contact-info">
+      <!-- Phone Number and WhatsApp Button for the first number -->
+      <div class="contact-item">
+        <a href="tel:+919714799474">+91 97147 99474</a>
+        <a href="https://wa.me/919714799474" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
+      </div>
+      
+      <!-- Phone Number and WhatsApp Button for the second number -->
+      <div class="contact-item">
+        <a href="tel:+919913982544">+91 99139 82544</a>
+        <a href="https://wa.me/919913982544" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
+      </div>
     </div>
-    <a href="https://wa.me/919714799474" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
-     <a href="https://wa.me/919913982544" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
   </div>
 
   <!-- Social Media Section -->
   <div class="box" id="social">
-    <h2>📱 Social Media</h2>
-    <div class="social-icons">
-      <p><strong>Facebook:</strong><br />
-        <a href="https://www.facebook.com/share/pn1M1jgu5BgqhaU3/" target="_blank">facebook.com/zakaria_car_accessories</a></p>
-
-      <p><strong>Instagram:</strong><br />
-        <a href="https://www.instagram.com/zakaria_car_accessories/profilecard/?igsh=a3Q2cGVjMTd3aGg=" target="_blank">@zakaria_car_accessories</a></p>
-
-      <p><strong>YouTube Channel:</strong><br />
-        <a href="https://youtube.com/@zakaria_car_accessories?si=tSHT_w7qdcD91LX2" target="_blank">youtube.com/@zakaria_car_accessories</a></p>
-    </div>
-  </div>
-
-  <!-- Google Maps Section -->
-  <div class="box">
-    <h2>🗺️ Find Us on Google Maps</h2>
-    <iframe 
-      src="https://maps.google.com/maps?q=ABC%20complex%2C%20opp.%20over%20bridge'%20nandelav%20chowkdi%2CBholav%2C%20bharuch&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      allowfullscreen>
-    </iframe>
-    <p><a href="https://maps.app.goo.gl/82c7GkWrvMrjbR6t5" target="_blank">View on Google Maps</a></p>
-  </div>
-
-</div>
-
-<footer>
-  <p>copyrights &copy; 2025 Aakib.A.Patel. All rights reserved.</p>
-</footer>
-
-</body>
-</html>
+    <h2>
