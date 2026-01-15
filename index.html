@@ -8,7 +8,7 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
@@ -24,7 +24,7 @@
       line-height: 1.6;
     }
 
-    /* ================= HEADER ================= */
+    /* ===== HEADER ===== */
 
     header {
       background-color: #3c8dbc;
@@ -96,7 +96,7 @@
       display: flex;
     }
 
-    /* ================= LAYOUT ================= */
+    /* ===== LAYOUT ===== */
 
     .container {
       max-width: 1200px;
@@ -118,11 +118,7 @@
       font-size: 1.4rem;
     }
 
-    p {
-      margin: 8px 0;
-    }
-
-    /* ================= CONTACT ================= */
+    /* ===== CONTACT ===== */
 
     .contact-info {
       display: flex;
@@ -131,17 +127,11 @@
     }
 
     .contact-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: nowrap;
-}
-
-@media (max-width: 480px) {
-  .contact-item {
-    flex-wrap: wrap;
-  }
-}
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: nowrap;
+    }
 
     .contact-item a {
       text-decoration: none;
@@ -164,7 +154,7 @@
       background-color: #1ebe5d;
     }
 
-    /* ================= SOCIAL ================= */
+    /* ===== SOCIAL ===== */
 
     .social-icons {
       display: flex;
@@ -186,7 +176,7 @@
       width: 24px;
     }
 
-    /* ================= MAP ================= */
+    /* ===== MAP ===== */
 
     iframe {
       width: 100%;
@@ -196,7 +186,7 @@
       margin-top: 12px;
     }
 
-    /* ================= FOOTER ================= */
+    /* ===== FOOTER ===== */
 
     footer {
       background-color: #3c8dbc;
@@ -210,7 +200,7 @@
       font-size: 0.95rem;
     }
 
-    /* ================= RESPONSIVE ================= */
+    /* ===== RESPONSIVE ===== */
 
     @media (max-width: 768px) {
       .navbar {
@@ -235,19 +225,16 @@
       .navbar-links.active {
         display: flex;
       }
+    }
 
-      .navbar-links a {
-        width: 100%;
-        text-align: center;
-      }
-
+    @media (max-width: 480px) {
       .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
       }
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -277,7 +264,7 @@
   <div class="box" id="intro">
     <h2>Drive with Confidence</h2>
     <p>
-      High-quality car accessories designed for comfort, safety, and style.
+      High-quality car accessories for comfort, safety, and style.
       From interior upgrades to essential protection, we help you enjoy every drive.
     </p>
   </div>
@@ -292,25 +279,26 @@
 
   <div class="box" id="contact">
     <h2>Contact Us</h2>
+
     <div class="contact-info">
 
-     <div class="contact-item">
-  <a href="tel:+919714799474">
-    <i class="fa-solid fa-phone"></i> +91 97147 99474
-  </a>
-  <a href="https://wa.me/919714799474" target="_blank" class="whatsapp-btn">
-    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-  </a>
-</div>
+      <div class="contact-item">
+        <a href="tel:+919714799474">
+          <i class="fa-solid fa-phone"></i> +91 97147 99474
+        </a>
+        <a href="https://wa.me/919714799474" target="_blank" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
 
-<div class="contact-item">
-  <a href="tel:+919913982544">
-    <i class="fa-solid fa-phone"></i> +91 99139 82544
-  </a>
-  <a href="https://wa.me/919913982544" target="_blank" class="whatsapp-btn">
-    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-  </a>
-</div>
+      <div class="contact-item">
+        <a href="tel:+919913982544">
+          <i class="fa-solid fa-phone"></i> +91 99139 82544
+        </a>
+        <a href="https://wa.me/919913982544" target="_blank" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
 
     </div>
   </div>
