@@ -17,21 +17,22 @@
     /* Logo-only Navbar */
     header.logo-navbar {
       background-color: #3c8dbc;
-      padding: 20px;
+      padding: 20px 40px;
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     header.logo-navbar img {
-      max-height: 250px;
-      height: auto;
-      width: auto;
+      max-height: 120px;
+      max-width: 100%;
       display: block;
+      object-fit: contain;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
       padding: 20px;
     }
@@ -48,6 +49,7 @@
     h2 {
       color: #3c8dbc;
       margin-bottom: 15px;
+      font-size: 1.5em;
     }
 
     a {
@@ -74,7 +76,8 @@
 
     .call-links a {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
 
     footer {
@@ -90,9 +93,29 @@
       font-weight: 300;
     }
 
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+    }
+
     @media (max-width: 600px) {
       header.logo-navbar img {
-        max-height: 100px;
+        max-height: 80px;
+      }
+      .container {
+        padding: 15px;
       }
     }
 
@@ -107,7 +130,8 @@
 
 <div class="container">
 
-    <div class="box" id="intro">
+  <!-- Introduction Section -->
+  <div class="box" id="intro">
     <h2>🚗 Drive with Confidence</h2>
     <p>
       Drive with confidence and style. Discover a comprehensive range of high-quality car accessories for every need. Whether you're looking for performance upgrades, interior comforts, or essential protection, we've got you covered.
@@ -117,7 +141,7 @@
     </p>
   </div>
 
-
+  <!-- Address Section -->
   <div class="box" id="about">
     <h2>📍 Address</h2>
     <p>
@@ -126,14 +150,17 @@
     </p>
   </div>
 
+  <!-- Contact Section -->
   <div class="box" id="contact">
     <h2>📞 Contact Us</h2>
     <div class="call-links">
       <a href="tel:+919714799474">+91 97147 99474</a>
       <a href="tel:+919913982544">+91 99139 82544</a>
     </div>
+    <a href="https://wa.me/919714799474" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
   </div>
 
+  <!-- Social Media Section -->
   <div class="box" id="social">
     <h2>📱 Social Media</h2>
     <div class="social-icons">
@@ -148,6 +175,7 @@
     </div>
   </div>
 
+  <!-- Google Maps Section -->
   <div class="box">
     <h2>🗺️ Find Us on Google Maps</h2>
     <iframe 
