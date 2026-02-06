@@ -9,232 +9,237 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-* { box-sizing: border-box; }
+*{box-sizing:border-box}
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0b0b0b;
-  color: #ffffff;
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#0b0b0b;
+  color:#fff;
 }
 
-/* ===== HEADER ===== */
-header {
-  position: sticky;
-  top: 0;
-  background: linear-gradient(180deg, #000, #0b0b0b);
-  border-bottom: 2px solid #e50914;
-  z-index: 1000;
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  background:#000;
+  border-bottom:2px solid #e50914;
+  z-index:1000;
 }
 
-.header-inner {
-  max-width: 1100px;
-  margin: auto;
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.header-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-/* ===== LOGO ===== */
-.logo-box {
-  background: #ffffff;
-  padding: 3px 5px;
-  border-radius: 14px;
-  border: 3px solid #e50914;
-  box-shadow: 0 10px 28px rgba(229,9,20,0.45);
-  animation: logoIn 0.8s ease forwards;
+/* ================= LOGO ================= */
+
+.logo-box{
+  background:#fff;
+  padding:4px 8px;
+  border-radius:14px;
+  border:3px solid #e50914;
+  box-shadow:0 10px 28px rgba(229,9,20,0.45);
+  animation:logoIn .8s ease forwards;
 }
 
-.logo-box img {
-  height: 130px;
-  width: auto;
-  display: block;
+.logo-box img{
+  height:110px;
+  width:auto;
+  display:block;
 }
 
-@keyframes logoIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes logoIn{
+  from{opacity:0;transform:translateY(-10px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-/* ===== NAV ===== */
-nav {
-  display: flex;
-  gap: 26px;
+/* ================= NAV ================= */
+
+nav{
+  display:flex;
+  gap:26px;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e50914;
-  transition: 0.3s;
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#e50914;
+  transition:.3s;
 }
 
-nav a:hover::after { width: 100%; }
+nav a:hover::after{width:100%}
 
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
+.menu-toggle{
+  display:none;
+  font-size:1.8rem;
+  cursor:pointer;
 }
 
-/* ===== LAYOUT ===== */
-.container {
-  max-width: 1000px;
-  margin: 36px auto;
-  padding: 0 16px;
+/* ================= CONTENT ================= */
+
+.container{
+  max-width:1000px;
+  margin:36px auto;
+  padding:0 16px;
 }
 
-section {
-  background: #141414;
-  border-radius: 18px;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-left: 4px solid #e50914;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+section{
+  background:#141414;
+  border-radius:18px;
+  padding:30px;
+  margin-bottom:30px;
+  border-left:5px solid #e50914;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s;
 }
 
-section.show {
-  opacity: 1;
-  transform: translateY(0);
+section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-h2 span { color: #e50914; }
+h2 span{color:#e50914}
 
-p {
-  color: #dddddd;
-  line-height: 1.7;
+p{
+  color:#ddd;
+  line-height:1.7;
 }
 
-/* ===== CONTACT ===== */
-.contact-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 14px;
-  align-items: center;
-  padding: 18px;
-  border-radius: 16px;
-  background: #1b1b1b;
-  margin-bottom: 16px;
-  transition: transform 0.3s, box-shadow 0.3s;
+/* ================= CONTACT ================= */
+
+.contact-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  padding:18px;
+  border-radius:16px;
+  background:#1b1b1b;
+  margin-bottom:16px;
+  transition:.3s;
 }
 
-.contact-row:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.65);
+.contact-row:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 35px rgba(0,0,0,.6);
 }
 
-.phone-link {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
+.phone-link{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.phone-link i {
-  color: #e50914;
-  margin-right: 8px;
+.phone-link i{
+  color:#e50914;
+  margin-right:8px;
 }
 
-.whatsapp-btn {
-  background: #25d366;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 22px;
-  text-decoration: none;
-  font-weight: 600;
+.whatsapp-btn{
+  background:#25d366;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:22px;
+  text-decoration:none;
+  font-weight:600;
 }
 
-.save-contact {
-  display: block;
-  margin-top: 24px;
-  padding: 18px;
-  text-align: center;
-  background: linear-gradient(135deg, #e50914, #ff2a2a);
-  border-radius: 18px;
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
+.save-contact{
+  display:block;
+  margin-top:24px;
+  padding:18px;
+  text-align:center;
+  background:linear-gradient(135deg,#e50914,#ff2a2a);
+  border-radius:18px;
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
 }
 
-.save-contact:hover {
-  transform: scale(1.05);
-  box-shadow: 0 14px 35px rgba(229,9,20,0.55);
+.save-contact:hover{
+  transform:scale(1.05);
 }
 
-/* ===== SOCIAL ===== */
-.social-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
+/* ================= SOCIAL ================= */
+
+.social-links{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
 }
 
-.social-links a {
-  padding: 16px;
-  border-radius: 16px;
-  background: #1b1b1b;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: background 0.3s, transform 0.3s;
+.social-links a{
+  padding:16px;
+  border-radius:16px;
+  background:#1b1b1b;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:.3s;
 }
 
-.social-links a:hover {
-  background: #e50914;
-  transform: translateY(-3px);
+.social-links a:hover{
+  background:#e50914;
+  transform:translateY(-3px);
 }
 
-iframe {
-  width: 100%;
-  height: 300px;
-  border: none;
-  border-radius: 16px;
+iframe{
+  width:100%;
+  height:300px;
+  border:none;
+  border-radius:16px;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 18px;
-  background: #000;
-  color: #aaa;
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+  padding:18px;
+  background:#000;
+  color:#aaa;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .logo-box img { height: 72px; }
+/* ================= MOBILE ================= */
 
-  nav {
-    position: absolute;
-    top: 110px;
-    left: 0;
-    right: 0;
-    background: #000;
-    flex-direction: column;
-    padding: 16px;
-    display: none;
+@media(max-width:768px){
+
+  .logo-box img{height:95px}
+
+  nav{
+    position:absolute;
+    top:120px;
+    left:0;
+    right:0;
+    background:#000;
+    flex-direction:column;
+    padding:16px;
+    display:none;
   }
 
-  nav.active { display: flex; }
-
-  .menu-toggle { display: block; }
+  nav.active{display:flex}
+  .menu-toggle{display:block}
 }
 </style>
 </head>
@@ -266,7 +271,7 @@ footer {
 
 <section id="home">
   <h2><span>Zakaria</span> Car Accessories</h2>
-  <p>Premium car accessories with expert fitting, honest pricing, and trusted service.</p>
+  <p>Premium car accessories with expert fitting, honest pricing and trusted service.</p>
 </section>
 
 <section id="about">
@@ -320,23 +325,20 @@ footer {
 </footer>
 
 <script>
-function toggleMenu() {
+function toggleMenu(){
   document.getElementById('navMenu').classList.toggle('active');
 }
 
-/* animation works on all screens */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
       entry.target.classList.add('show');
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15 });
+},{threshold:.15});
 
-document.querySelectorAll('section').forEach(section => {
-  observer.observe(section);
-});
+document.querySelectorAll('section').forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
