@@ -16,7 +16,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0c0c0c;
+  background: #0b0b0b;
   color: #ffffff;
 }
 
@@ -25,7 +25,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  background: #000;
+  background: #000000;
   border-bottom: 2px solid #e50914;
   z-index: 1000;
 }
@@ -39,16 +39,27 @@ header {
   justify-content: space-between;
 }
 
-.logo img {
-  height: 68px;
-  animation: logoFade 1s ease forwards;
-  filter: drop-shadow(0 0 14px rgba(229,9,20,0.45));
+/* LOGO STYLE */
+
+.logo-box {
+  background: #ffffff;
+  padding: 10px 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(229,9,20,0.35);
+  animation: logoIn 1s ease forwards;
 }
 
-@keyframes logoFade {
+.logo-box img {
+  height: 58px;
+  display: block;
+}
+
+@keyframes logoIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* NAV */
 
 nav {
   display: flex;
@@ -56,7 +67,7 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   position: relative;
@@ -107,16 +118,12 @@ section.show {
   transform: translateY(0);
 }
 
-h2 {
-  margin-bottom: 12px;
-}
-
 h2 span {
   color: #e50914;
 }
 
 p {
-  color: #ddd;
+  color: #dddddd;
   line-height: 1.7;
 }
 
@@ -136,11 +143,11 @@ p {
 
 .contact-row:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
 
 .phone-link {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
 }
@@ -152,7 +159,7 @@ p {
 
 .whatsapp-btn {
   background: #25d366;
-  color: #fff;
+  color: #ffffff;
   padding: 8px 14px;
   border-radius: 20px;
   text-decoration: none;
@@ -166,7 +173,7 @@ p {
   text-align: center;
   background: linear-gradient(135deg, #e50914, #ff2a2a);
   border-radius: 16px;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -189,7 +196,7 @@ p {
   padding: 14px;
   border-radius: 14px;
   background: #1b1b1b;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   display: flex;
@@ -215,8 +222,8 @@ iframe {
 footer {
   text-align: center;
   padding: 18px;
-  background: #000;
-  color: #aaa;
+  background: #000000;
+  color: #aaaaaa;
 }
 
 /* ===== MOBILE ===== */
@@ -224,10 +231,10 @@ footer {
 @media (max-width: 768px) {
   nav {
     position: absolute;
-    top: 80px;
+    top: 90px;
     left: 0;
     right: 0;
-    background: #000;
+    background: #000000;
     flex-direction: column;
     padding: 16px;
     display: none;
@@ -248,7 +255,8 @@ footer {
 
 <header>
   <div class="header-inner">
-    <div class="logo">
+
+    <div class="logo-box">
       <img src="ZCA_NEW_LOGO2-removebg-preview.png" alt="Zakaria car accessories">
     </div>
 
@@ -262,6 +270,7 @@ footer {
       <a href="#contact">Contact</a>
       <a href="#social">Social</a>
     </nav>
+
   </div>
 </header>
 
@@ -269,7 +278,7 @@ footer {
 
 <section id="home">
   <h2><span>Zakaria</span> car accessories</h2>
-  <p>Premium car accessories with expert fitting and honest pricing.</p>
+  <p>Premium car accessories with expert fitting, honest pricing, and trusted service.</p>
 </section>
 
 <section id="about">
@@ -319,7 +328,7 @@ footer {
 </div>
 
 <footer>
-  © 2026 Zakaria car accessories
+  © 2026 Zakaria car accessories. All rights reserved.
 </footer>
 
 <script>
@@ -327,13 +336,11 @@ function toggleMenu() {
   document.getElementById('navMenu').classList.toggle('active');
 }
 
-/* Reveal animation on scroll */
 const sections = document.querySelectorAll('section');
 window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      sec.classList.add('show');
+  sections.forEach(section => {
+    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+      section.classList.add('show');
     }
   });
 });
