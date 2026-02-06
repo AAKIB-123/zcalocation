@@ -5,242 +5,219 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zakaria car accessories</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0b0b0b;
-  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  background: #ffffff;
+  color: #111;
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 
 header {
   position: sticky;
   top: 0;
-  background: #000;
-  border-bottom: 2px solid #e50914;
   z-index: 1000;
+  background: #000000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
-  padding: 18px 16px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* ===== LOGO ===== */
-
+/* LOGO BOX FIXED */
 .logo-box {
   background: #ffffff;
-  padding: 14px 26px;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(229,9,20,0.4);
-  animation: logoIn 0.9s ease forwards;
+  border: 3px solid #e50914;
+  border-radius: 16px;
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  animation: logoPop 0.8s ease-out;
 }
 
 .logo-box img {
-  weight: 100px;
+  height: 72px;
+  width: auto;
   display: block;
 }
 
-@keyframes logoIn {
-  from { opacity: 0; transform: translateY(-12px); }
-  to { opacity: 1; transform: translateY(0); }
+/* LOGO ANIMATION */
+@keyframes logoPop {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* ===== NAV ===== */
-
+/* NAV */
 nav {
   display: flex;
-  gap: 26px;
+  gap: 22px;
 }
 
 nav a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  position: relative;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: #e50914;
-  transition: 0.3s;
+nav a:hover {
+  color: #e50914;
 }
-
-nav a:hover::after { width: 100%; }
 
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  color: #ffffff;
   cursor: pointer;
 }
 
-/* ===== LAYOUT ===== */
+/* ================= CONTENT ================= */
 
 .container {
-  max-width: 1000px;
-  margin: 36px auto;
+  max-width: 1100px;
+  margin: 30px auto;
   padding: 0 16px;
 }
 
 section {
-  background: #141414;
-  border-radius: 18px;
-  padding: 30px;
-  margin-bottom: 30px;
+  background: #0f0f0f;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 26px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   border-left: 5px solid #e50914;
-
-  /* animation base */
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-section.show {
-  opacity: 1;
-  transform: translateY(0);
+h2 {
+  color: #e50914;
+  margin-bottom: 12px;
 }
 
-h2 span { color: #e50914; }
-
-p {
-  color: #dddddd;
-  line-height: 1.7;
-}
-
-/* ===== CONTACT ===== */
+/* ================= CONTACT ================= */
 
 .contact-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 14px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 18px;
-  border-radius: 16px;
-  background: #1b1b1b;
-  margin-bottom: 16px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.contact-row:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.65);
+  border: 2px solid #222;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
 }
 
 .phone-link {
-  color: #fff;
-  text-decoration: none;
+  color: #ffffff;
   font-weight: 600;
-}
-
-.phone-link i {
-  color: #e50914;
-  margin-right: 8px;
+  text-decoration: none;
 }
 
 .whatsapp-btn {
   background: #25d366;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 22px;
-  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 20px;
   font-weight: 600;
-}
-
-.save-contact {
-  display: block;
-  margin-top: 24px;
-  padding: 18px;
-  text-align: center;
-  background: linear-gradient(135deg, #e50914, #ff2a2a);
-  border-radius: 18px;
-  color: #fff;
-  font-weight: 700;
   text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.save-contact:hover {
-  transform: scale(1.05);
-  box-shadow: 0 14px 35px rgba(229,9,20,0.55);
-}
-
-/* ===== SOCIAL ===== */
+/* ================= SOCIAL ================= */
 
 .social-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 .social-links a {
-  padding: 16px;
-  border-radius: 16px;
-  background: #1b1b1b;
-  color: #fff;
+  background: #1a1a1a;
+  padding: 14px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: background 0.3s, transform 0.3s;
+  color: #ffffff;
+  text-align: center;
 }
 
 .social-links a:hover {
   background: #e50914;
-  transform: translateY(-3px);
 }
 
+/* MAP */
 iframe {
   width: 100%;
   height: 300px;
   border: none;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
-/* ===== FOOTER ===== */
-
+/* FOOTER */
 footer {
+  background: #000000;
+  color: #ffffff;
   text-align: center;
   padding: 18px;
-  background: #000;
-  color: #aaa;
 }
 
-/* ===== MOBILE ===== */
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-  .logo-box img { height: 64px; }
-
   nav {
     position: absolute;
-    top: 110px;
+    top: 90px;
     left: 0;
     right: 0;
-    background: #000;
+    background: #000000;
     flex-direction: column;
     padding: 16px;
     display: none;
   }
 
-  nav.active { display: flex; }
+  nav.active {
+    display: flex;
+  }
 
-  .menu-toggle { display: block; }
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo-box img {
+    height: 60px;
+  }
+}
+
+/* DESKTOP LOGO */
+@media (min-width: 1024px) {
+  .logo-box img {
+    height: 80px;
+  }
 }
 </style>
 </head>
@@ -271,8 +248,10 @@ footer {
 <div class="container">
 
 <section id="home">
-  <h2><span>Zakaria</span> car accessories</h2>
-  <p>Premium car accessories with expert fitting, honest pricing, and trusted service.</p>
+  <h2>Zakaria car accessories</h2>
+  <p>
+    Premium car accessories with expert fitting, honest pricing, and trusted service.
+  </p>
 </section>
 
 <section id="about">
@@ -287,64 +266,48 @@ footer {
   <h2>Contact</h2>
 
   <div class="contact-row">
-    <a href="tel:+919714799474" class="phone-link">
+    <a class="phone-link" href="tel:+919714799474">
       <i class="fa-solid fa-phone"></i> +91 97147 99474
     </a>
-    <a href="https://wa.me/919714799474" class="whatsapp-btn">WhatsApp</a>
+    <a class="whatsapp-btn" href="https://wa.me/919714799474" target="_blank">
+      WhatsApp
+    </a>
   </div>
 
   <div class="contact-row">
-    <a href="tel:+919913982544" class="phone-link">
+    <a class="phone-link" href="tel:+919913982544">
       <i class="fa-solid fa-phone"></i> +91 99139 82544
     </a>
-    <a href="https://wa.me/919913982544" class="whatsapp-btn">WhatsApp</a>
+    <a class="whatsapp-btn" href="https://wa.me/919913982544" target="_blank">
+      WhatsApp
+    </a>
   </div>
-
-  <a href="zakaria-car-accessories.vcf" download class="save-contact">
-    Save Contact
-  </a>
 </section>
 
 <section id="social">
   <h2>Social Media</h2>
   <div class="social-links">
-    <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
+    <a href="https://www.facebook.com/share/1CBfxSRona/">Facebook</a>
+    <a href="https://www.instagram.com/zakaria_car_accessories">Instagram</a>
+    <a href="https://youtube.com/@zakaria_car_accessories">YouTube</a>
   </div>
 </section>
 
 <section>
   <h2>Find Us</h2>
-  <iframe src="https://www.google.com/maps?q=Zakaria+Car+Accessories+Bharuch&output=embed"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1900099.4117128823!2d73.53203175722655!3d21.5417064865874"></iframe>
 </section>
 
 </div>
 
 <footer>
-  © 2026 Zakaria car accessories. All rights reserved.
+  © 2026 Zakaria car accessories
 </footer>
 
 <script>
 function toggleMenu() {
   document.getElementById('navMenu').classList.toggle('active');
 }
-
-/* ✅ PRO ANIMATION FIX (ALL SCREENS) */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.15
-});
-
-document.querySelectorAll('section').forEach(section => {
-  observer.observe(section);
-});
 </script>
 
 </body>
