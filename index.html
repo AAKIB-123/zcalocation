@@ -1,232 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zakaria car accessories</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zakaria car accessories</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0c0c0c;
+  color: #ffffff;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #ffffff;
-    }
+/* ===== HEADER ===== */
 
-    /* ============ HEADER ============ */
+header {
+  position: sticky;
+  top: 0;
+  background: #000;
+  border-bottom: 2px solid #e50914;
+  z-index: 1000;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      background: #000000;
-      border-bottom: 2px solid #e50914;
-      z-index: 1000;
-    }
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.logo img {
+  height: 68px;
+  animation: logoFade 1s ease forwards;
+  filter: drop-shadow(0 0 14px rgba(229,9,20,0.45));
+}
 
-    .logo img {
-      height: 70px;
-      filter: drop-shadow(0 0 14px rgba(229,9,20,0.5));
-    }
+@keyframes logoFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    nav {
-      display: flex;
-      gap: 24px;
-    }
+nav {
+  display: flex;
+  gap: 24px;
+}
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
 
-    nav a:hover {
-      color: #e50914;
-    }
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #e50914;
+  transition: 0.3s;
+}
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.7rem;
-      color: #ffffff;
-      cursor: pointer;
-    }
+nav a:hover::after {
+  width: 100%;
+}
 
-    /* ============ LAYOUT ============ */
+.menu-toggle {
+  display: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 32px auto;
-      padding: 0 16px;
-    }
+/* ===== LAYOUT ===== */
 
-    section {
-      background: #141414;
-      border-radius: 18px;
-      padding: 26px;
-      margin-bottom: 26px;
-      border-left: 5px solid #e50914;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
+.container {
+  max-width: 1000px;
+  margin: 36px auto;
+  padding: 0 16px;
+}
 
-    h2 {
-      color: #ffffff;
-      margin-bottom: 14px;
-    }
+section {
+  background: #141414;
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 30px;
+  border-left: 5px solid #e50914;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
 
-    h2 span {
-      color: #e50914;
-    }
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    p {
-      color: #dddddd;
-      line-height: 1.7;
-    }
+h2 {
+  margin-bottom: 12px;
+}
 
-    /* ============ CONTACT ============ */
+h2 span {
+  color: #e50914;
+}
 
-    .contact-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+p {
+  color: #ddd;
+  line-height: 1.7;
+}
 
-    .contact-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 14px;
-      align-items: center;
-      padding: 14px;
-      border-radius: 14px;
-      background: #1b1b1b;
-      border: 1px solid #2b2b2b;
-    }
+/* ===== CONTACT ===== */
 
-    .phone-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      color: #ffffff;
-      text-decoration: none;
-    }
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 14px;
+  background: #1b1b1b;
+  margin-bottom: 14px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .phone-link i {
-      color: #e50914;
-    }
+.contact-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
 
-    .whatsapp-btn {
-      background: #25d366;
-      color: #ffffff;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+.phone-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    .save-contact {
-      display: block;
-      margin-top: 22px;
-      text-align: center;
-      padding: 16px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #e50914, #ff2a2a);
-      color: #ffffff;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-    }
+.phone-link i {
+  color: #e50914;
+  margin-right: 8px;
+}
 
-    /* ============ SOCIAL ============ */
+.whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-    .social-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
-    }
+.save-contact {
+  display: block;
+  margin-top: 22px;
+  padding: 16px;
+  text-align: center;
+  background: linear-gradient(135deg, #e50914, #ff2a2a);
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .social-links a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px;
-      border-radius: 14px;
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 600;
-      background: #1b1b1b;
-      border: 1px solid #2b2b2b;
-    }
+.save-contact:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(229,9,20,0.5);
+}
 
-    .social-links a i {
-      color: #e50914;
-      font-size: 1.2rem;
-    }
+/* ===== SOCIAL ===== */
 
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 14px;
-      filter: grayscale(0.2);
-    }
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
 
-    footer {
-      text-align: center;
-      padding: 18px;
-      font-size: 0.85rem;
-      color: #aaaaaa;
-      background: #000000;
-      border-top: 1px solid #1f1f1f;
-    }
+.social-links a {
+  padding: 14px;
+  border-radius: 14px;
+  background: #1b1b1b;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s, transform 0.3s;
+}
 
-    /* ============ MOBILE ============ */
+.social-links a:hover {
+  background: #e50914;
+  transform: translateY(-3px);
+}
 
-    @media (max-width: 768px) {
-      nav {
-        position: absolute;
-        top: 82px;
-        left: 0;
-        right: 0;
-        background: #000000;
-        flex-direction: column;
-        gap: 16px;
-        padding: 16px;
-        display: none;
-        border-bottom: 2px solid #e50914;
-      }
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 14px;
+}
 
-      nav.active {
-        display: flex;
-      }
+/* ===== FOOTER ===== */
 
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 18px;
+  background: #000;
+  color: #aaa;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    padding: 16px;
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -254,9 +269,7 @@
 
 <section id="home">
   <h2><span>Zakaria</span> car accessories</h2>
-  <p>
-    Premium car accessories for comfort, safety, and style. Upgrade your drive with trusted products and expert fitting.
-  </p>
+  <p>Premium car accessories with expert fitting and honest pricing.</p>
 </section>
 
 <section id="about">
@@ -270,55 +283,60 @@
 <section id="contact">
   <h2>Contact</h2>
 
-  <div class="contact-list">
-    <div class="contact-row">
-      <a href="tel:+919714799474" class="phone-link">
-        <i class="fa-solid fa-phone"></i> +91 97147 99474
-      </a>
-      <a href="https://wa.me/919714799474" class="whatsapp-btn">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-    </div>
+  <div class="contact-row">
+    <a href="tel:+919714799474" class="phone-link">
+      <i class="fa-solid fa-phone"></i> +91 97147 99474
+    </a>
+    <a href="https://wa.me/919714799474" class="whatsapp-btn">WhatsApp</a>
+  </div>
 
-    <div class="contact-row">
-      <a href="tel:+919913982544" class="phone-link">
-        <i class="fa-solid fa-phone"></i> +91 99139 82544
-      </a>
-      <a href="https://wa.me/919913982544" class="whatsapp-btn">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-    </div>
+  <div class="contact-row">
+    <a href="tel:+919913982544" class="phone-link">
+      <i class="fa-solid fa-phone"></i> +91 99139 82544
+    </a>
+    <a href="https://wa.me/919913982544" class="whatsapp-btn">WhatsApp</a>
   </div>
 
   <a href="zakaria-car-accessories.vcf" download class="save-contact">
-    <i class="fa-solid fa-address-book"></i> Save Contact
+    Save Contact
   </a>
 </section>
 
 <section id="social">
   <h2>Social Media</h2>
   <div class="social-links">
-    <a href="https://www.facebook.com/share/1CBfxSRona/"><i class="fa-brands fa-facebook"></i> Facebook</a>
-    <a href="https://www.instagram.com/zakaria_car_accessories"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    <a href="https://youtube.com/@zakaria_car_accessories"><i class="fa-brands fa-youtube"></i> YouTube</a>
+    <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+    <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+    <a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a>
   </div>
 </section>
 
 <section>
   <h2>Find Us</h2>
-  <iframe src="https://www.google.com/maps?q=Zakaria+Car+Accessories+Bharuch&output=embed" loading="lazy"></iframe>
+  <iframe src="https://www.google.com/maps?q=Zakaria+Car+Accessories+Bharuch&output=embed"></iframe>
 </section>
 
 </div>
 
 <footer>
-  © 2026 Zakaria car accessories. All rights reserved.
+  © 2026 Zakaria car accessories
 </footer>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('active');
-  }
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('active');
+}
+
+/* Reveal animation on scroll */
+const sections = document.querySelectorAll('section');
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add('show');
+    }
+  });
+});
 </script>
 
 </body>
