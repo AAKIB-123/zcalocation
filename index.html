@@ -6,7 +6,7 @@
   <title>Zakaria Car Accessories</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -18,9 +18,9 @@
 
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #f4f6f8;
-      color: #222;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #0b0b0b, #140000);
+      color: #ffffff;
     }
 
     /* ================= HEADER ================= */
@@ -29,8 +29,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #3c8dbc;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      background: #0b0b0b;
+      border-bottom: 1px solid rgba(229,9,20,0.4);
     }
 
     .header-inner {
@@ -43,8 +43,8 @@
     }
 
     .logo img {
-      height: 100px;
-      weight: 150px;
+      height: 70px;
+      width: auto;
     }
 
     nav {
@@ -53,42 +53,48 @@
     }
 
     nav a {
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
     }
 
     nav a:hover {
-      opacity: 0.85;
+      color: #e50914;
     }
 
     .menu-toggle {
       display: none;
       font-size: 1.6rem;
-      color: #fff;
+      color: #ffffff;
       cursor: pointer;
     }
 
     /* ================= LAYOUT ================= */
 
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 30px auto;
       padding: 0 16px;
     }
 
     section {
-      background: #fff;
-      border-radius: 12px;
+      background: #111111;
+      border-radius: 16px;
       padding: 24px;
       margin-bottom: 26px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid rgba(229,9,20,0.3);
+      box-shadow: 0 10px 30px rgba(229,9,20,0.15);
     }
 
     h2 {
-      color: #3c8dbc;
+      color: #e50914;
       margin-bottom: 14px;
+    }
+
+    p {
+      color: #e0e0e0;
+      line-height: 1.6;
     }
 
     /* ================= CONTACT ================= */
@@ -104,9 +110,10 @@
       grid-template-columns: 1fr auto;
       gap: 12px;
       align-items: center;
-      padding: 12px 14px;
-      border: 1px solid #e6e6e6;
-      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid rgba(229,9,20,0.4);
+      border-radius: 12px;
+      background: #0b0b0b;
     }
 
     .phone-link {
@@ -114,15 +121,14 @@
       align-items: center;
       gap: 8px;
       font-weight: 600;
-      color: #3c8dbc;
+      color: #e50914;
       text-decoration: none;
-      white-space: nowrap;
     }
 
     .whatsapp-btn {
       background: #25d366;
-      color: #fff;
-      padding: 8px 8px;
+      color: #ffffff;
+      padding: 8px 12px;
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 600;
@@ -130,6 +136,24 @@
       display: flex;
       align-items: center;
       gap: 6px;
+    }
+
+    .save-contact {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid #e50914;
+      color: #e50914;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .save-contact:hover {
+      background: #e50914;
+      color: #ffffff;
     }
 
     /* ================= SOCIAL ================= */
@@ -144,27 +168,33 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 12px;
-      background: #f4f6f8;
-      border-radius: 10px;
+      padding: 14px;
+      background: #0b0b0b;
+      border-radius: 12px;
       text-decoration: none;
-      color: #3c8dbc;
+      color: #ffffff;
       font-weight: 600;
+      border: 1px solid rgba(229,9,20,0.4);
+    }
+
+    .social-links a i {
+      color: #e50914;
     }
 
     iframe {
       width: 100%;
       height: 300px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     footer {
-      background: #3c8dbc;
-      color: #fff;
+      background: #0b0b0b;
+      color: #b3b3b3;
       text-align: center;
       padding: 18px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(229,9,20,0.3);
     }
 
     /* ================= MOBILE ================= */
@@ -172,10 +202,10 @@
     @media (max-width: 768px) {
       nav {
         position: absolute;
-        top: 70px;
+        top: 80px;
         left: 0;
         right: 0;
-        background: #3c8dbc;
+        background: #0b0b0b;
         flex-direction: column;
         gap: 14px;
         padding: 16px;
@@ -207,7 +237,7 @@
 
     <nav id="navMenu">
       <a href="#home">Home</a>
-      <a href="#about">About</a>
+      <a href="#about">Address</a>
       <a href="#contact">Contact</a>
       <a href="#social">Social</a>
     </nav>
@@ -216,61 +246,65 @@
 
 <div class="container">
 
- <section id="home">
+<section id="home">
   <h2>Drive with Confidence</h2>
   <p>
-    Drive with confidence using quality car accessories designed for comfort, safety, and style. From interior upgrades to advanced infotainment and lighting solutions, we help make every journey better and more enjoyable.
+    Premium car accessories focused on comfort, safety, and style. From interiors to infotainment and lighting, we upgrade every drive.
   </p>
   <p>
-    We focus on honest pricing, proper fitting, and complete customer satisfaction. Visit our shop or contact us by call or WhatsApp for product details, availability, and support.
+    Honest pricing, clean installation, and customer satisfaction always come first.
   </p>
 </section>
 
-  <section id="about">
-    <h2>Address</h2>
-    <p>
-      ABC Complex, Opp. Over Bridge, Nandelav Chowkdi,<br>
-      Bholav, Bharuch – 392001, Gujarat
-    </p>
-  </section>
+<section id="about">
+  <h2>Address</h2>
+  <p>
+    ABC Complex, Opp. Over Bridge, Nandelav Chowkdi,<br>
+    Bholav, Bharuch – 392001, Gujarat
+  </p>
+</section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
+<section id="contact">
+  <h2>Contact Us</h2>
 
-    <div class="contact-list">
-      <div class="contact-row">
-        <a href="tel:+919714799474" class="phone-link">
-          <i class="fa-solid fa-phone"></i> +91 97147 99474
-        </a>
-        <a href="https://wa.me/919714799474" target="_blank" class="whatsapp-btn">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-      </div>
-
-      <div class="contact-row">
-        <a href="tel:+919913982544" class="phone-link">
-          <i class="fa-solid fa-phone"></i> +91 99139 82544
-        </a>
-        <a href="https://wa.me/919913982544" target="_blank" class="whatsapp-btn">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-      </div>
+  <div class="contact-list">
+    <div class="contact-row">
+      <a href="tel:+919714799474" class="phone-link">
+        <i class="fa-solid fa-phone"></i> +91 97147 99474
+      </a>
+      <a href="https://wa.me/919714799474" target="_blank" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
     </div>
-  </section>
 
-  <section id="social">
-    <h2>Social Media</h2>
-    <div class="social-links">
-      <a href="https://www.facebook.com/share/1CBfxSRona/"><i class="fa-brands fa-facebook"></i> Facebook</a>
-      <a href="https://www.instagram.com/zakaria_car_accessories?igsh=MW1hZTBndjZjMnptYw=="><i class="fa-brands fa-instagram"></i> Instagram</a>
-      <a href="https://youtube.com/@zakaria_car_accessories?si=ONze6lIw7oU8gTUu"><i class="fa-brands fa-youtube"></i> YouTube</a>
+    <div class="contact-row">
+      <a href="tel:+919913982544" class="phone-link">
+        <i class="fa-solid fa-phone"></i> +91 99139 82544
+      </a>
+      <a href="https://wa.me/919913982544" target="_blank" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>Find Us on Google Maps</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1900099.4117128823!2d73.53203175722655!3d21.5417064865874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be020aa3b7e3655%3A0x2eef7520f24d9c4d!2sZakaria%20Car%20Accessories!5e0!3m2!1sen!2sin!4v1769509378318!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+  <a href="zakaria-car-accessories.vcf" download class="save-contact">
+    <i class="fa-solid fa-address-book"></i> Save Contact
+  </a>
+</section>
+
+<section id="social">
+  <h2>Social Media</h2>
+  <div class="social-links">
+    <a href="https://www.facebook.com/share/1CBfxSRona/"><i class="fa-brands fa-facebook"></i> Facebook</a>
+    <a href="https://www.instagram.com/zakaria_car_accessories"><i class="fa-brands fa-instagram"></i> Instagram</a>
+    <a href="https://youtube.com/@zakaria_car_accessories"><i class="fa-brands fa-youtube"></i> YouTube</a>
+  </div>
+</section>
+
+<section>
+  <h2>Find Us on Google Maps</h2>
+  <iframe src="https://www.google.com/maps?q=Zakaria+Car+Accessories+Bharuch&output=embed" loading="lazy"></iframe>
+</section>
 
 </div>
 
