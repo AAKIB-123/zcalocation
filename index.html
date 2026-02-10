@@ -319,7 +319,7 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: .15 });
+}, { threshold: .20 });
 
 document.querySelectorAll('section').forEach(sec => observer.observe(sec));
 
