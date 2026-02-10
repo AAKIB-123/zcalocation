@@ -1,6 +1,3 @@
-Here is the full updated code with the scroll-based navbar hide/show feature added, along with your original content and styling intact:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,15 +18,13 @@ body{
   color:#fff;
 }
 
-/* ================= HEADER ================= */
-
 header{
   position:sticky;
   top:0;
   background:#000;
   border-bottom:2px solid #e50914;
   z-index:1000;
-  transition: top 0.3s ease-in-out; /* Smooth transition for navbar */
+  transition: top 0.3s ease-in-out;
 }
 
 .header-inner{
@@ -41,11 +36,9 @@ header{
   justify-content:space-between;
 }
 
-/* ================= LOGO ================= */
-
 .logo-box{
   background:#fff;
-  padding:2px 4px;   /* reduced padding */
+  padding:2px 4px;
   border-radius:12px;
   border:3px solid #e50914;
   box-shadow:0 10px 28px rgba(229,9,20,0.45);
@@ -60,8 +53,6 @@ header{
   from{opacity:0;transform:translateY(-10px)}
   to{opacity:1;transform:translateY(0)}
 }
-
-/* ================= NAV ================= */
 
 nav{
   display:flex;
@@ -94,8 +85,6 @@ nav a:hover::after{width:100%}
   cursor:pointer;
 }
 
-/* ================= CONTENT ================= */
-
 .container{
   max-width:1000px;
   margin:36px auto;
@@ -124,8 +113,6 @@ p{
   color:#ddd;
   line-height:1.7;
 }
-
-/* ================= CONTACT ================= */
 
 .contact-row{
   display:grid;
@@ -181,8 +168,6 @@ p{
   transform:scale(1.05);
 }
 
-/* ================= SOCIAL ================= */
-
 .social-links{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -214,16 +199,12 @@ iframe{
   border-radius:16px;
 }
 
-/* ================= FOOTER ================= */
-
 footer{
   text-align:center;
   padding:18px;
   background:#000;
   color:#aaa;
 }
-
-/* ================= MOBILE ================= */
 
 @media(max-width:768px){
 
@@ -342,24 +323,18 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('section').forEach(sec => observer.observe(sec));
 
-// Navbar scroll hide/show functionality
-let lastScrollTop = 0; // Store the last scroll position
-const navbar = document.querySelector('header'); // Select the header element
+let lastScrollTop = 0;
+const navbar = document.querySelector('header');
 
-// Function to hide or show the navbar based on scroll direction
 window.addEventListener('scroll', function () {
     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    // If scrolling down and past a certain point, hide the navbar
     if (currentScroll > lastScrollTop) {
-        navbar.style.top = "-80px"; // Adjust based on your navbar height
+        navbar.style.top = "-80px";
     } else {
-        navbar.style.top = "0"; // Show navbar when scrolling up
+        navbar.style.top = "0";
     }
 
-    // Update last scroll position
-```
-    // Update last scroll position
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
 });
 </script>
