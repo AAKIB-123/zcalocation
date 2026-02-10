@@ -1,3 +1,6 @@
+Here is the full updated code with the scroll-based navbar hide/show feature added, along with your original content and styling intact:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +29,7 @@ header{
   background:#000;
   border-bottom:2px solid #e50914;
   z-index:1000;
+  transition: top 0.3s ease-in-out; /* Smooth transition for navbar */
 }
 
 .header-inner{
@@ -327,16 +331,37 @@ function toggleMenu(){
   document.getElementById('navMenu').classList.toggle('active');
 }
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
       entry.target.classList.add('show');
       observer.unobserve(entry.target);
     }
   });
-},{threshold:.15});
+}, { threshold: .15 });
 
-document.querySelectorAll('section').forEach(sec=>observer.observe(sec));
+document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+
+// Navbar scroll hide/show functionality
+let lastScrollTop = 0; // Store the last scroll position
+const navbar = document.querySelector('header'); // Select the header element
+
+// Function to hide or show the navbar based on scroll direction
+window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // If scrolling down and past a certain point, hide the navbar
+    if (currentScroll > lastScrollTop) {
+        navbar.style.top = "-80px"; // Adjust based on your navbar height
+    } else {
+        navbar.style.top = "0"; // Show navbar when scrolling up
+    }
+
+    // Update last scroll position
+```
+    // Update last scroll position
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+});
 </script>
 
 </body>
