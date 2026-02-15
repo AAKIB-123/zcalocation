@@ -45,13 +45,8 @@ header{
 }
 
 .logo-box img{
-   width:200px;
+  width:200px;
   display:block;
-}
-
-@keyframes logoIn{
-  from{opacity:0;transform:translateY(-10px)}
-  to{opacity:1;transform:translateY(0)}
 }
 
 nav{
@@ -114,42 +109,43 @@ p{
   line-height:1.7;
 }
 
+/* CONTACT */
 .contact-row{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:14px;
+  display:flex;
+  justify-content:space-between;
   align-items:center;
   padding:18px;
   border-radius:16px;
   background:#1b1b1b;
   margin-bottom:16px;
   transition:.3s;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-.contact-row:hover{
-  transform:translateY(-4px);
-  box-shadow:0 14px 35px rgba(0,0,0,.6);
+.contact-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
 }
 
 .phone-link{
   color:#fff;
   text-decoration:none;
-  font-weight:600;
 }
 
 .phone-link i{
   color:#e50914;
-  margin-right:8px;
 }
 
 .whatsapp-btn{
   background:#25d366;
   color:#fff;
-  padding:2px 5px;
+  padding:6px 14px;
   border-radius:22px;
   text-decoration:none;
-  font-weight:250;
-  
+  font-size:.9rem;
 }
 
 .save-contact{
@@ -169,6 +165,7 @@ p{
   transform:scale(1.05);
 }
 
+/* SOCIAL */
 .social-links{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -188,9 +185,27 @@ p{
   transition:.3s;
 }
 
+.social-links a i{
+  font-size:1.2rem;
+}
+
 .social-links a:hover{
-  background:#e50914;
   transform:translateY(-3px);
+}
+
+/* Brand Colors */
+.facebook i{color:#1877f2;}
+.instagram i{color:#e4405f;}
+.youtube i{color:#ff0000;}
+
+.social-links a:hover{
+  background:#2a2a2a;
+}
+
+/* MAP */
+.map-container{
+  position:relative;
+  cursor:pointer;
 }
 
 iframe{
@@ -198,6 +213,12 @@ iframe{
   height:300px;
   border:none;
   border-radius:16px;
+  pointer-events:none; /* allows click anywhere */
+}
+
+.map-overlay{
+  position:absolute;
+  inset:0;
 }
 
 footer{
@@ -261,7 +282,7 @@ footer{
 <section id="about">
   <h2>Address</h2>
   <p>
-     Shop no-A5,ABC Complex, Opp. Over Bridge, Nandelav Chowkdi,<br>
+    Shop no-A5, ABC Complex, Opp. Over Bridge, Nandelav Chowkdi,<br>
     Bholav, Bharuch – 392001, Gujarat
   </p>
 </section>
@@ -270,16 +291,18 @@ footer{
   <h2>Contact</h2>
 
   <div class="contact-row">
-    <a href="tel:+919714799474" class="phone-link">
-      <i class="fa-solid fa-phone"></i> +91 97147 99474
-    </a>
+    <div class="contact-left">
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+919714799474" class="phone-link">+91 97147 99474</a>
+    </div>
     <a href="https://wa.me/919714799474" class="whatsapp-btn">WhatsApp</a>
   </div>
 
   <div class="contact-row">
-    <a href="tel:+919913982544" class="phone-link">
-      <i class="fa-solid fa-phone"></i> +91 99139 82544
-    </a>
+    <div class="contact-left">
+      <i class="fa-solid fa-phone"></i>
+      <a href="tel:+919913982544" class="phone-link">+91 99139 82544</a>
+    </div>
     <a href="https://wa.me/919913982544" class="whatsapp-btn">WhatsApp</a>
   </div>
 
@@ -291,15 +314,24 @@ footer{
 <section id="social">
   <h2>Social Media</h2>
   <div class="social-links">
-    <a href="https://www.facebook.com/zakaria.car.acc/"><i class="fa-brands fa-facebook"></i> Facebook</a>
-    <a href="https://www.instagram.com/zakaria_car_accessories/"><i class="fa-brands fa-instagram"></i> Instagram</a>
-    <a href="https://www.youtube.com/@ZAKARIA_CAR_ACCESSORIES"><i class="fa-brands fa-youtube"></i> YouTube</a>
+    <a class="facebook" href="https://www.facebook.com/zakaria.car.acc/">
+      <i class="fa-brands fa-facebook"></i> Facebook
+    </a>
+    <a class="instagram" href="https://www.instagram.com/zakaria_car_accessories/">
+      <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+    <a class="youtube" href="https://www.youtube.com/@ZAKARIA_CAR_ACCESSORIES">
+      <i class="fa-brands fa-youtube"></i> YouTube
+    </a>
   </div>
 </section>
 
 <section>
   <h2>Find Us</h2>
-  <iframe src="https://www.google.com/maps?q=Zakaria+Car+Accessories+Bharuch&output=embed"></iframe>
+  <div class="map-container" onclick="openMap()">
+    <iframe src="https://www.google.com/maps?q=Zakaria+Car+Accessories+Bharuch&output=embed"></iframe>
+    <div class="map-overlay"></div>
+  </div>
 </section>
 
 </div>
@@ -311,6 +343,10 @@ footer{
 <script>
 function toggleMenu(){
   document.getElementById('navMenu').classList.toggle('active');
+}
+
+function openMap(){
+  window.open("https://www.google.com/maps?q=Zakaria+Car+Accessories+Bharuch", "_blank");
 }
 
 const observer = new IntersectionObserver(entries => {
